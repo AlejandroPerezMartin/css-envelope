@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alejandro Perez Martin (AlePerez92)">
+    <title>Envelope Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="author" href="http://plus.google.com/113994696486543075777/">
+</head>
+<body>
+
+    <div class="envelope">
+
+        <!-- Contact form -->
+        <form action="#">
+            <div>
+                <input name="name" type="text" placeholder="Name">
+                <label for="name">Name</label>
+            </div>
+            <div>
+                <input name="email" aria-required="true" type="email" placeholder="*Email" pattern="[^ @]*@[^ @]*" required>
+                <label for="email">*Email</label>
+            </div>
+            <div>
+                <textarea wrap="off" name="message" aria-required="true" type="text" cols="60" rows="8" placeholder="*Message" required></textarea>
+                <label for="message">*Message</label>
+            </div>
+            <input name="submit" type="submit" value="Enviar" />
+        </form>
+
+        <!-- Envelope flaps -->
+        <div class="flap-top"></div>
+        <div class="flap-left"></div>
+        <div class="flap-right"></div>
+        <div class="flap-bottom"></div>
+
+    </div><!-- .envelope -->
+
+</body>
+</html>

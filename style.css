@@ -1,0 +1,285 @@
+/*
+Project Name: CSS3 Envelope
+Author: Alejandro Perez Martin (AlePerez92)
+Author URL: http://www.linkedin.com/in/aleperez92
+*/
+
+/*------------------------------------*\
+    $ERIC MEYER'S RESET
+\*------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+/*------------------------------------*\
+    $FONT FACE
+\*------------------------------------*/
+@font-face {
+  font-family:                              'Open Sans';
+  font-style:                               normal;
+  font-weight:                              400;
+  src:                                      local('Open Sans'), local('OpenSans'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family:                              'Open Sans';
+  font-style:                               normal;
+  font-weight:                              700;
+  src:                                      local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+
+/*------------------------------------*\
+    $GENERAL
+\*------------------------------------*/
+body {
+    background: #DDD;
+    font: 100% "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing:                     border-box;
+    -moz-box-sizing:                        border-box;
+    box-sizing:                             border-box;
+}
+
+
+/*------------------------------------*\
+    $ENVELOPE
+\*------------------------------------*/
+.envelope {
+  background: #EEE;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
+  height: 20em;
+  margin: 20em;
+  position: relative;
+  width: 40em;
+}
+
+.envelope .flap-top {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -100%;
+  width: 100%;
+}
+
+.envelope .flap-top::before {
+  border: 1em solid #FEFEFE;
+  background: #F5F5F5;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 25em;
+  right: 7.5em;
+  position: absolute;
+  bottom: -15.7em;
+  -webkit-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.185);
+  -moz-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.185);
+  -ms-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.185);
+  -o-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.185);
+  transform: rotate(45deg) skew(-9deg, -9deg) scale(1.185);
+  width: 25em;
+}
+
+.envelope .flap-right {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  z-index: 9999;
+}
+
+.envelope .flap-right::before {
+  background: #fefefe;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 15.4em;
+  right: -9.6em;
+  position: absolute;
+  top: 2.4em;
+  -webkit-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -moz-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -ms-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -o-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  width: 15.35em;
+}
+
+.envelope .flap-left {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  z-index: 9999;
+}
+
+.envelope .flap-left::before {
+  background: #fefefe;
+  border-radius: 2em;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 15.4em;
+  left: -9.6em;
+  position: absolute;
+  top: 2.4em;
+  -webkit-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -moz-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -ms-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  -o-transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  transform: rotate(45deg) skew(-20deg, -20deg) scale(1.6);
+  width: 15.35em;
+}
+
+.envelope .flap-bottom {
+  bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.envelope .flap-bottom::before {
+  background: #fefefe;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 25em;
+  right: 7.5em;
+  position: absolute;
+  bottom: -15.7em;
+  -webkit-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.19);
+  -moz-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.19);
+  -ms-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.19);
+  -o-transform: rotate(45deg) skew(-9deg, -9deg) scale(1.19);
+  transform: rotate(45deg) skew(-9deg, -9deg) scale(1.19);
+  width: 25em;
+}
+
+.envelope form {
+  background: #ffffff;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
+  left: 2.5%;
+  padding: 2.5em;
+  position: absolute;
+  text-align: right;
+  width: 95%;
+  z-index: 999;
+}
+
+.envelope form div {
+  position: relative;
+}
+
+.envelope form label {
+  background: #63c5ff;
+  color: #FFF;
+  font-size: 0.75em;
+  font-weight: bold;
+  left: 0;
+  opacity: 0;
+  padding: .75em;
+  position: absolute;
+  top: -1.5em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.envelope form input:focus + label,
+.envelope form textarea:focus + label {
+  opacity: 1;
+  top: -2.4em;
+}
+
+.envelope form textarea {
+  overflow: auto;
+  outline: none;
+  resize: none;
+}
+
+.envelope form input,
+.envelope form textarea {
+  background: #fefefe;
+  border: 4px solid #eeeeee;
+  color: #999999;
+  font: 100% "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  margin-bottom: 1em;
+  max-width: 100%;
+  padding: .75em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.envelope form input:last-child {
+  margin-bottom: none;
+}
+
+.envelope form input:focus,
+.envelope form textarea:focus {
+  background: #ffffff;
+  border-color: #63c5ff;
+  -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333333;
+  outline: 0;
+}
+
+.envelope form input[type="submit"] {
+  background: #037db0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.25em;
+  letter-spacing: .05em;
+  text-shadow: 0 1px 0 #515151;
+  text-transform: uppercase;
+}
+
+.envelope form input[type="submit"]:hover {
+  background: #005b82;
+  border-color: #63c5ff;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #333333;
+}
+
+.envelope form input[type="submit"]:active,
+.envelope form input[type="submit"]:focus {
+  background: #034460;
+  border-color: #037db0;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
