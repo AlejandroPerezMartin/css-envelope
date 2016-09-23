@@ -2,4 +2,4 @@
 CSS only envelope form
 
 ## See it live in Codepen
-https://codepen.io/pen/#
+https://codepen.io/alejandroperezmartin/pen/mAWABy
